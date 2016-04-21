@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160420192920) do
+ActiveRecord::Schema.define(version: 20160421145419) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -45,6 +45,40 @@ ActiveRecord::Schema.define(version: 20160420192920) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "story"
+    t.string   "stand_up"
+    t.string   "instructional"
+    t.string   "review"
+    t.string   "poetry"
+    t.string   "informational"
+    t.string   "teaching"
+    t.string   "persuasive"
+    t.string   "advice"
+    t.string   "thought_provoking"
+    t.string   "impromptu"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.integer  "presentation_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "presentations", force: :cascade do |t|
+    t.string   "video"
+    t.integer  "upvotes"
+    t.integer  "views"
+    t.string   "goal"
+    t.integer  "accomplished"
+    t.integer  "user_id"
+    t.integer  "category_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
