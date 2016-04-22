@@ -84,7 +84,10 @@ gem 'chronic' # Chronic is a pure Ruby natural language date parser.
 gem 'draper', '~> 2.1' # Decorator support
 gem 'wicked' # Wizard builder
 gem 'gmaps4rails' # Enables easy Google map + overlays creation
-
+gem 'bourbon' # A simple and lightweight mixin library for Sass
+gem 'neat' # Connected to bourbon
+gem 'bitters' # Connected to bourbon
+gem "refills", group: :development # Conntected
   # s.add_dependency 'valid_email2',                '~> 1.2'    # Email Validation
   # s.add_dependency 'validate_url',                '~> 1.0'    # URL Validation
   # s.add_dependency 'validates_timeliness',        '~> 4.0'    # Time validation
