@@ -1,5 +1,4 @@
 class Category < ActiveRecord::Base
-
-belongs_to :presentation
+  has_many :presentations
 
 end

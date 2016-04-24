@@ -47,23 +47,15 @@ ActiveRecord::Schema.define(version: 20160422191701) do
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
   create_table "categories", force: :cascade do |t|
-    t.string   "story"
-    t.string   "stand_up"
-    t.string   "instructional"
-    t.string   "review"
-    t.string   "poetry"
-    t.string   "informational"
-    t.string   "teaching"
-    t.string   "persuasive"
-    t.string   "advice"
-    t.string   "thought_provoking"
-    t.string   "impromptu"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "feedbacks", force: :cascade do |t|
     t.integer  "presentation_id"
+    t.string   "rating"
+    t.string   "comment"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
