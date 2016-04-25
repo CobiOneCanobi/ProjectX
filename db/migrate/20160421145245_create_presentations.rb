@@ -2,6 +2,7 @@ class CreatePresentations < ActiveRecord::Migration
   def change
     create_table :presentations do |t|
       t.string :video
+      t.string :title
       t.text :about
       t.integer :upvotes
       t.integer :views

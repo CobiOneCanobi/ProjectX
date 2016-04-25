@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20160425160144) do
 
   create_table "presentations", force: :cascade do |t|
     t.string   "video"
+    t.string   "title"
     t.text     "about"
     t.integer  "upvotes"
     t.integer  "views"

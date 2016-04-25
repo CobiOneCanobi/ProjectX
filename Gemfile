@@ -85,6 +85,7 @@ gem 'draper', '~> 2.1' # Decorator support
 gem 'wicked' # Wizard builder
 gem 'gmaps4rails' # Enables easy Google map + overlays creation
 gem 'bourbon' # A simple and lightweight mixin library for Sass
+              #https://github.com/thoughtbot/bitters/issues/240
 gem 'neat' # Connected to bourbon
 gem 'bitters' # Connected to bourbon
 gem "refills", group: :development # Conntected
