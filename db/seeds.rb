@@ -16,7 +16,7 @@ unless Rails.env.production? || Rails.env.staging? || Rails.env.qa? || Rails.env
   require 'csv'
 
   AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
-  User.create!(email: 'user@example.com', password: 'password', password_confirmation: 'password')
+  User.create!(username: 'Yoda', email: 'user@example.com', password: 'password', password_confirmation: 'password')
 
   ############
   # Categories

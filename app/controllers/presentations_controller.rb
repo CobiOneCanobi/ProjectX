@@ -9,7 +9,8 @@ class PresentationsController < ApplicationController
   end
 
   def show
-
+    @presentation = Presentation.find(params[:id])
+    @feedback = Feedback.new if current_user == @presentation.user
   end
 
   def create
