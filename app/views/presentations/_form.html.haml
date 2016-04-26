@@ -3,7 +3,7 @@
     = f.input :title
     = f.input :about
     = f.input :goal
-    = f.input :video
+    = f.input :video, label: "URL"
     = f.input :category_id, as: :select, :collection => Hash[Category.all.map{|c| [c.name, c.id]}]
 
   = f.actions do

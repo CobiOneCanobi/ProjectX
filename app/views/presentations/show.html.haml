@@ -4,3 +4,14 @@
 %p Username: #{@presentation.user.username}
 %p Category: #{@presentation.category.name}
 %p URL: #{@presentation.video}
+
+- if current_user != @presentation.user
+  %h4 Was #{@presentation.user.username}'s goal accomplished?
+  = semantic_form_for [@presentation, @feedback]  do |f|
+    = f.inputs do
+      = f.input :rating, label: "",  as: :radio, collection: ["Yes", "Somewhat", "No"]
+      = f.input :comment
+      = f.input :presentation_id, :as => :hidden, :input_html => { :value => "#{@presentation.id}" }
+
+    = f.actions do
+      = f.action :submit, as: :button
