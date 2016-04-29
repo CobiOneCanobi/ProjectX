@@ -1,0 +1,20 @@
+.main{
+  @include outer-container;
+}
+
+.content{
+  &.with-side-nav{
+    @include span-columns(10);
+    @include shift(2);
+  }
+
+  &.no-side-nav{
+    @include span-columns(6);
+    @include shift(3);
+  }
+}
+
+.sliding-menu-content{
+  top: 104px;
+  @include span-columns(2);
+}
