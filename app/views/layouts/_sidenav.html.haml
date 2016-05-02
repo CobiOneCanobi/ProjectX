@@ -1,8 +1,18 @@
 %nav.js-menu.sliding-menu-content.is-visible
   %ul
     %li
-      %a{href: "javascript:void(0)"} Item 1
+      %a{href: "javascript:void(0)"} Home
     %li
-      %a{href: "javascript:void(0)"} Item 2
+      %a{href: "javascript:void(0)"} About Us
     %li
-      %a{href: "javascript:void(0)"} Item 3
+      %a{href: "javascript:void(0)"} My Profile
+    %ul
+      %li
+        = link_to '', class: 'js-accordion-trigger' do
+          Category
+          %span.caret
+        / %a.js-accordion-trigger.caret{:href => "javascript:void(0)"} Category
+        %ul.submenu{:style => "display:none;"}
+          - Category.all.each do |category|
+            %li
+              %a{:href => "javascript:void(0)"} #{category.name}
