@@ -1,7 +1,20 @@
 %h3 #{@presentation.title} Feedback
 
-- @feedbacks.each do |feedback|
-  %p Goal accomplished: #{feedback.rating}
-  %p Additional comments: #{feedback.comment}
-  %br
+/ - @feedbacks.each do |feedback|
+/   %p Goal accomplished: #{feedback.rating}
+/   %p Additional comments: #{feedback.comment}
+/   %br
+/ = render 'refills/scroll_on_page'
+.scroll-on-page
+  %aside#scroll-on-page-top
+    - 1.upto(@feedbacks.count) do |num|
+      %a.scroll-on-page-link{:href => "#scroll-link-#{num}"} Go to #{num}
+  %article
+    - @feedbacks.each do |feedback|
+      %section
+        %h4{:id => "scroll-link-#{feedback.id}"} Feedback #{feedback.id}
+        %p Goal Accomplished: #{feedback.rating}
+        %p Comment: #{feedback.comment}
+    %a.scroll-on-page-link{:href => "#scroll-on-page-top"} Back to top
+
 
