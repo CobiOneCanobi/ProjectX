@@ -8,11 +8,8 @@
       %a{href: "javascript:void(0)"} My Profile
     %ul
       %li
-        = link_to '', class: 'js-accordion-trigger' do
-          Category
-          %span.caret
-        / %a.js-accordion-trigger.caret{:href => "javascript:void(0)"} Category
+        %a.js-accordion-trigger{:href => "javascript:void(0)"} Category
         %ul.submenu{:style => "display:none;"}
           - Category.all.each do |category|
             %li
-              %a{:href => "javascript:void(0)"} #{category.name}
+              = link_to category.name, controller: "presentations", action: "category", category_id: category.id

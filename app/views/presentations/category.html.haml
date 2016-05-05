@@ -1,0 +1,8 @@
+= render 'refills/cards'
+- @presentations.each do |presentation|
+  %p Title: #{presentation.title}
+  %p About: #{presentation.about}
+  %p Username: #{presentation.user.username}
+  %p Category: #{presentation.category.name}
+  %p URL: #{presentation.video}
+  %br

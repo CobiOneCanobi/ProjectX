@@ -33,6 +33,11 @@ class PresentationsController < ApplicationController
   def delete
   end
 
+  def category
+    category = Category.find(params[:category_id])
+    @presentations = Presentation.where(category_id: category.id)
+  end
+
 
   private
 

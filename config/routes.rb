@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :presentations do
     resources :feedbacks, only: [:index, :new, :create]
   end
+
+  get 'presentations/category/:category_id' => 'presentations#category'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
