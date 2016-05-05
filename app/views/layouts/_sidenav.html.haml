@@ -5,7 +5,10 @@
     %li
       %a{href: "javascript:void(0)"} About Us
     %li
-      %a{href: "javascript:void(0)"} My Profile
+      - if current_user
+        = link_to 'My Profile', profile_path(current_user)
+      - else
+        = link_to 'My Profile', new_user_session_path
     %ul
       %li
         %a.js-accordion-trigger{:href => "javascript:void(0)"} Category

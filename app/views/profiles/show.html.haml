@@ -1,8 +1,4 @@
 %h2 Hello #{@user.username}
-%p Your Presentations:
+%p Your Posts:
 
-- @presentations.each do |presentation|
-  %p Title: #{presentation.title}
-  -if @user == current_user
-    %p= link_to 'View Feedback', presentation_feedbacks_path(presentation)
-  %br
+=render 'layouts/card'

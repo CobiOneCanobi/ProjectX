@@ -34,8 +34,8 @@ class PresentationsController < ApplicationController
   end
 
   def category
-    category = Category.find(params[:category_id])
-    @presentations = Presentation.where(category_id: category.id)
+    @category = Category.find(params[:category_id])
+    @presentations = Presentation.where(category_id: @category.id)
   end
 
 

@@ -40,5 +40,9 @@
           %input{:placeholder => "Enter Search", :type => "search"}/
           %button{:type => "submit"}
             %img{:alt => "Search Icon", :src => "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png"}
-      %a.sign-up{:href => "javascript:void(0)"} Sign Up
-      %a.sign-up{:href => "javascript:void(0)"} Log in
+      - if !current_user
+        = link_to 'Sign Up', new_user_registration_path, class: 'sign-up'
+        = link_to 'Log in', new_user_session_path, class: 'sign-up'
+      - else
+        = link_to 'Log out', destroy_user_session_path, method: :delete, class: 'sign-up'
+        = link_to 'Settings', '', class: 'sign-up'

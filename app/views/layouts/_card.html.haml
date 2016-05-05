@@ -1,0 +1,15 @@
+%div.cards
+  - @presentations.each do |presentation|
+    = link_to presentation do
+      %div.card
+        %div.card-image
+          %img{src: "http://img.youtube.com/vi/i_2Hh-UGm8I/0.jpg", alt: "No thumbnail found"}
+        %div.card-header
+          #{presentation.title} | #{link_to presentation.user.username, profile_path(presentation.user)} |
+        %div.card-copy
+          %p= truncate(presentation.about.html_safe, length: 150)
+          -if !@category
+            %span.category-btn #{link_to presentation.category.name, controller: "presentations", action: "category", category_id: presentation.category.id}
+          -if @user && @user == current_user
+            %span= link_to 'View Feedback', presentation_feedbacks_path(presentation)
+
