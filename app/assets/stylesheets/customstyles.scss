@@ -8,8 +8,8 @@
     @include shift(1);
   }
   &.no-side-nav {
-    @include span-columns(8);
-    @include shift(2);
+    @include span-columns(10);
+    @include shift(1);
   }
 }
 
