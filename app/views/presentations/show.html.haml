@@ -1,9 +1,21 @@
-%p Title: #{@presentation.title}
-%p About: #{@presentation.about}
-%p Goal: #{@presentation.goal}
-%p Username: #{@presentation.user.username}
-%p Category: #{@presentation.category.name}
-%p URL: #{@presentation.video}
+%h1 #{@presentation.title} | #{link_to @presentation.user.username, profile_path(@presentation.user)}
+/ %p Goal: #{@presentation.goal}
+/ %p Category: #{@presentation.category.name}
+
+.comment
+  .comment-content
+    %h1 Goal
+    %ul
+      %li= @presentation.goal
+    /%p.comment-detail= @presentation.category.name
+
+%iframe{width: "640", height: "390", src: "http://www.youtube.com/embed/i_2Hh-UGm8I", allowfullscreen: "allowfullscreen"}
+
+
+%div.expander
+  %a{href: "javascript:void(0)", id: "js-expander-trigger", class: "expander-trigger expander-hidden"}About
+  %div#js-expander-content.expander-content
+    %p= @presentation.about
 
 - if current_user != @presentation.user
   %h4 Was #{@presentation.user.username}'s goal accomplished?
