@@ -11,6 +11,13 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  before_filter :set_search
+
+  def set_search
+    @q = Presentation.ransack(params[:q])
+    @results = @q.result.includes(:user, :category) if params[:q]
+  end
+
   protected
 
   def configure_permitted_parameters

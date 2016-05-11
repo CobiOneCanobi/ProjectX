@@ -2,6 +2,7 @@ class PresentationsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
+    @presentations = Presentation.all
   end
 
   def new
